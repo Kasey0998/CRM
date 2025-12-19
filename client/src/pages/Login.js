@@ -5,8 +5,8 @@ import api from "../api/axios";
 export default function Login({ onLogin }) {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("admin@example.com");
-  const [password, setPassword] = useState("Admin@123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
