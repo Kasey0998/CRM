@@ -19,7 +19,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// ✅ Preflight handler (no wildcard route needed)
+
 app.use((req, res, next) => {
   if (req.method === "OPTIONS") {
     return cors(corsOptions)(req, res, () => res.sendStatus(204));
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.get("/health", (_, res) => res.json({ ok: true }));
-app.get("/", (_, res) => res.send("API running ✅"));
+app.get("/", (_, res) => res.send("API running"));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
